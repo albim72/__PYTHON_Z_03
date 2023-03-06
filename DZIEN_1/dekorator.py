@@ -26,3 +26,37 @@ def dmuchanie(czego):
 
 
 dmuchanie("świeczek na torcie")
+
+#przykład 2
+
+def pomiarczasu(funkcja):
+    def wrapper():
+        starttime = time.perf_counter()
+        funkcja()
+        endtime = time.perf_counter()
+        print(f"czas wykonania funkcji {funkcja.__name__}: {endtime-starttime} s")
+    return wrapper
+
+
+def sleep(funkcja):
+    def wrapper():
+        time.sleep(3)
+        return funkcja()
+    return wrapper
+
+@pomiarczasu
+def info():
+    inf = []
+    for u in range(1000):
+        inf.append(u)
+
+info()
+
+@sleep
+@pomiarczasu
+def big_lista():
+    sum([i**3 for i in range(10000000)])
+
+big_lista()
+
+#przykład 3

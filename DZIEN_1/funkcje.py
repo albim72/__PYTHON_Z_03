@@ -33,3 +33,28 @@ def osoba(funkcja, *args):
 
 print(osoba(witaj,"Anna"))
 print(osoba(konkurs,"Olga","Kot",88))
+
+#druga funkcja z zagnieżdzeniem funkcji
+
+def rejestracja(oplata):
+
+    def lista():
+        return "jesteś na liście zawodników"
+
+    def brak():
+        return "uzupełnij wpłatę w ciagu 5 dni"
+
+    def error():
+        return "błąd: 0 - brak wpłaty, 1 - wpłata"
+
+    if oplata == 1:
+        return lista
+    elif oplata == 0:
+        return brak
+    else:
+        return error
+
+
+print(rejestracja(1)())
+print(rejestracja(0)())
+print(rejestracja(19)())

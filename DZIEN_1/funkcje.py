@@ -11,3 +11,10 @@ def policz(n):
 print(policz(9)(3))
 
 num = [67,3,-8,3,12,0,99,78,5,17,-99,4,18,8,-11]
+
+parzyste = list(filter(lambda x:x%2==0,num))
+print(parzyste)
+
+cube = list(map(lambda x:x**3,num))
+
+print(cube)

@@ -60,3 +60,31 @@ def big_lista():
 big_lista()
 
 #przykład 3
+def debug(funkcja):
+    def wrapper(*args,**kwargs):
+        print(f"wołana funkcja: {funkcja.__name__}")
+        funkcja(*args)
+    return wrapper
+
+@debug
+def takafunkcja(n):
+    print(f"informacja: {n}")
+
+
+takafunkcja("2345356434")
+
+#przykład 4
+
+def repeater(n):
+    def wrapper(funkcja):
+        def inner(*args):
+            for i in range(n):
+                funkcja(*args)
+        return inner
+    return wrapper
+
+@repeater(n=5)
+def komunikat(k,m):
+    print(f"komunikat: {k}, nr: {m}")
+
+komunikat("fsdadgfafds",56)

@@ -18,3 +18,18 @@ print(parzyste)
 cube = list(map(lambda x:x**3,num))
 
 print(cube)
+
+#budowa funkcji wyższego rzędu
+
+def witaj(imie):
+    return f"Miło Cię widzieć {imie}!"
+
+def konkurs(imie,miasto,punkty):
+    return f"Uczestnik konkursu: {imie}, miasto: {miasto}, liczba punktów: {punkty}"
+
+
+def osoba(funkcja, *args):
+    return funkcja(*args)
+
+print(osoba(witaj,"Anna"))
+print(osoba(konkurs,"Olga","Kot",88))

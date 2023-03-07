@@ -6,10 +6,11 @@ class Pojazd(IPojazd):
         return litry*100/odl
 
     def kosztyprzejazdu(self, odl, litry, cena_l):
-        return self.spalanie(litry,odl)*(odl/100)*cena_l
+        return self.spalanie(odl,litry)*(odl/100)*cena_l
 
     def opis(self, msg):
-        return "spalanie [l/100km]:"
+        return f"spalanie {msg}:"
 
-    def multipojazd(self):
-        return super().multipojazd()
+    def multipojazd(self, odl, litry, msg):
+        return super().multipojazd(odl, litry, msg)
+

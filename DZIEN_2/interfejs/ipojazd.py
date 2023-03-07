@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-class Pojazd(metaclass=ABCMeta):
+class IPojazd(metaclass=ABCMeta):
 
     @abstractmethod
     def spalanie(self,odl,litry):raise NotImplementedError

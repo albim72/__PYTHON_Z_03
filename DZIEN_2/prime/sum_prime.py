@@ -8,3 +8,5 @@ def find_prime_numbers_sum(minimum, maksimum):
                 break
             if count==0 and number!=1:
                 total = total +number
+
+    return total

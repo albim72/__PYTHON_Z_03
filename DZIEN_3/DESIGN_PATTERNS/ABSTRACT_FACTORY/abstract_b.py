@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from abstract_a import AbstractProductA
 
-class AbstractProcductB(ABC):
+class AbstractProductB(ABC):
     @abstractmethod
     def useful_function_b(self)->str:pass
     

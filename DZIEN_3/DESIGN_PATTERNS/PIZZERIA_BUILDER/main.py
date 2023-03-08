@@ -121,3 +121,18 @@ def validate_style(builders):
         print(error_msg)
         return (False,None)
     return (True,builder)
+
+def main():
+    builders = dict(m=MargaritaBuilder, c=CreamyBaconBuilder)
+    valid_input = False
+    while not valid_input:
+        valid_input,builder = validate_style(builders)
+    print("___________________________________________________")
+    waiter = Waiter()
+    waiter.construct_pizza(builder)
+    pizza = waiter.pizza
+    print("___________________________________________________")
+    print(f'Enjoy your {pizza}!')
+
+if __name__ == '__main__':
+    main()
